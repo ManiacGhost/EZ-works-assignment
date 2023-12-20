@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "44804098-ba97-4855-bbbe-c42af6b8fbbd",
+		"name": "Secure File Sharing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24021130"
+	},
+	"item": [
+		{
+			"name": "Ops user login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "harsh101",
+						"description": "will be used for authentication",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "HarshPandey",
+						"description": "will be used for authentication",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/ops-user/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"ops-user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpc19vcHNfdXNlciI6dHJ1ZSwiZXhwIjoxNzAxNTk1NDAwfQ.TFG4zEE7wwViUL_TGXUspv4briZ4o-4zXYifTeawZck",
+						"description": "Authorization token recieved after ops login",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/EZ Test/test1.docx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/ops-user/upload-file",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"ops-user",
+						"upload-file"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Client Signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "Harsh",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "HarshPandey",
+						"type": "text"
+					},
+					{
+						"key": "email",
+						"value": "harshpandey8754@gmail.com",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/client-user/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"client-user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Client login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "Harsh101",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "HarshPandey",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/client-user/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"client-user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of Uploaded files",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpc19vcHNfdXNlciI6ZmFsc2UsImV4cCI6MTcwMTU5NzI2Nn0.TaGIeBblq-qdJ1jNfzvbU3PhBYd7qKYb7OlMR6UJ00E",
+						"description": "Client token recieved after login",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/client-user/list-files",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"client-user",
+						"list-files"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download file",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpc19vcHNfdXNlciI6ZmFsc2UsImV4cCI6MTcwMTU5NzI2Nn0.TaGIeBblq-qdJ1jNfzvbU3PhBYd7qKYb7OlMR6UJ00E",
+						"description": "Client token recieved after login",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/client-user/download-file/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"client-user",
+						"download-file",
+						"1"
+					]
+				},
+				"description": "Please add the file id which has to be downloaded at the end of the URL path."
+			},
+			"response": []
+		}
+	]
+}
